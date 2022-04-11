@@ -1,0 +1,56 @@
+.search {
+  $height: 40px;
+  $top: 8px;
+  width: 320px;
+  position: absolute;
+  right: 0;
+  top: -$top -$height;
+  //transition: transform 0.3s ease-in-out;
+
+  &_active {
+    transform: translateY($top * 2 + $height);
+    transition: transform 0.3s ease-in-out;
+    @include tablet {
+      transform: translateY($top * 3 + $height);
+      transition: transform 0.3s ease-in-out;
+      width: 462px;
+    }
+    @include laptop {
+      transform: translateY($top * 5 + $height);
+      transition: transform 0.3s ease-in-out;
+      width: 580px;
+      left: 48%;
+    }
+  }
+
+  &__form {
+    position: relative;
+  }
+
+  &__button {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $dark;
+    background-color: transparent;
+    border: none;
+    width: 24px;
+    height: 24px;
+  }
+
+  &__input {
+    width: 100%;
+    height: $height;
+    background: #FFFFFF;
+    border-radius: 20px;
+    padding: 3px 40px 3px 15px;
+    outline: 1px solid transparent;
+    outline-offset: -1px;
+    border: none;
+    &:focus {
+      outline-color: $secondaryDark;
+    }
+
+  }
+}

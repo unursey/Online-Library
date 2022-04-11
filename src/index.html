@@ -13,7 +13,7 @@
   <section class="library">
     <header class="header library__header">
       <div class="container header__container">
-        <img class="header__logo" src="img/logo.svg" alt="Логотип big brother" width="61" height="41">
+        <img class="header__logo" src="img/logo.svg" alt="Логотип big brother">
 
         <button class="header__btn-add">Добавить книгу</button>
 
@@ -29,8 +29,8 @@
       <div class="library__fields fields">
         <div class="fields__block">
           <button class="fields__btn fields__btn_sort" aria-label="По рейтингу">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M3 18H9V16H3V18ZM3 6V8H21V6H3ZM3 13H15V11H3V13Z" fill="white"/>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 18H9V16H3V18ZM3 6V8H21V6H3ZM3 13H15V11H3V13Z" fill="currentColor"/>
             </svg>
             <span class="fields__text">По рейтингу</span>
           </button>
@@ -47,8 +47,8 @@
 
         <div class="fields__block">
           <button class="fields__btn fields__btn_filter" aria-label="Фильтр">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4.24999 5.61C6.26999 8.2 9.99999 13 9.99999 13V19C9.99999 19.55 10.45 20 11 20H13C13.55 20 14 19.55 14 19V13C14 13 17.72 8.2 19.74 5.61C20.25 4.95 19.78 4 18.95 4H5.03999C4.20999 4 3.73999 4.95 4.24999 5.61Z" fill="white"/>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4.24999 5.61C6.26999 8.2 9.99999 13 9.99999 13V19C9.99999 19.55 10.45 20 11 20H13C13.55 20 14 19.55 14 19V13C14 13 17.72 8.2 19.74 5.61C20.25 4.95 19.78 4 18.95 4H5.03999C4.20999 4 3.73999 4.95 4.24999 5.61Z" fill="currentColor"/>
             </svg>
 
             <span class="fields__text">Фильтр</span>
@@ -109,7 +109,7 @@
           <a href="/book" data-navigo>
             <article class="cart">
               <div class="cart__wrapper">
-                <img src="img/temp.jpg" alt="Обложка 1984" class="cart__image">
+                <img src="img/garry.png" alt="Обложка 1984" class="cart__image">
 
                 <p class="cart__label">хочу прочитать</p>
               </div>
@@ -133,11 +133,72 @@
             </article>
           </a>
         </li>
+
+        <li class="library__item">
+          <a href="/book" data-navigo>
+            <article class="cart">
+              <div class="cart__wrapper">
+                <img src="img/fil.png" alt="Обложка Как разговаривать с кем угодно" class="cart__image">
+
+                <p class="cart__label">хочу прочитать</p>
+              </div>
+
+              <div class="cart__content">
+                <h3 class="cart__title">Как разговаривать с кем угодно</h3>
+
+                <p class="cart__author">Марк Роудз</p>
+
+                <p class="cart__description">
+                  Вы раскрываетесь в обществе других людей и заводите разговор или же замыкаетесь...
+                </p>
+
+                <div class="cart__rating">
+                  <img class="cart__rating-star" src="img/star.svg" alt="Рейтинг 4 из 5">
+                  <img class="cart__rating-star" src="img/star.svg" alt="">
+                  <img class="cart__rating-star" src="img/star.svg" alt="">
+                  <img class="cart__rating-star" src="img/star.svg" alt="">
+                  <img class="cart__rating-star" src="img/star-o.svg" alt="">
+                </div>
+              </div>
+            </article>
+          </a>
+        </li>
+
+        <li class="library__item">
+          <a href="/book" data-navigo>
+            <article class="cart">
+              <div class="cart__wrapper">
+                <img src="img/lourens.png" alt="Обложка Книга Ленивого Гуру" class="cart__image">
+
+                <p class="cart__label">хочу прочитать</p>
+              </div>
+
+              <div class="cart__content">
+                <h3 class="cart__title">Книга Ленивого Гуру</h3>
+
+                <p class="cart__author">Лоуренс Шортер</p>
+
+                <p class="cart__description">
+                  Свежее и вдохновляющее иллюстрированное руководство для осознанного саморазвития без суеты и стресса...
+                </p>
+
+                <div class="cart__rating">
+                  <img class="cart__rating-star" src="img/star.svg" alt="Рейтинг 4 из 5">
+                  <img class="cart__rating-star" src="img/star.svg" alt="">
+                  <img class="cart__rating-star" src="img/star.svg" alt="">
+                  <img class="cart__rating-star" src="img/star.svg" alt="">
+                  <img class="cart__rating-star" src="img/star-o.svg" alt="">
+                </div>
+              </div>
+            </article>
+          </a>
+        </li>
+
       </ul>
     </div>
 
 
-    <footer class="footer">
+    <footer class="footer library__footer">
       <button class="footer__btn library__add-btn" aria-label="Добавить книгу">
         <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
           <circle cx="22" cy="22" r="22" fill="currentColor"/>
@@ -161,13 +222,13 @@
       <div class="book__wrapper">
         <img class="book__image" src="img/1984.jpg" alt="Обложка 1984">
 
-      <button class="book__label book__hidden_label">хочу прочитать</button>
+      <button class="book__label book__label_hidden">хочу прочитать</button>
       </div>
 
       <div class="book__content">
-        <h2 class="book__title">Гарри Поттер и Философский камень</h2>
+        <h2 class="book__title">1984</h2>
 
-        <p class="book__author">Джоан Роулинг</p>
+        <p class="book__author">Джордж Оруэлл</p>
         <div class="book__rating">
           <img class="book__rating-star" src="img/star.svg" alt="Рейтинг 5 из 5">
           <img class="book__rating-star" src="img/star.svg" alt="">
@@ -184,7 +245,7 @@
       </div>
     </div>
 
-    <footer class="footer">
+    <footer class="footer book__footer">
       <button class="footer__btn book__label">хочу прочитать</button>
     </footer>
   </section>
@@ -289,5 +350,25 @@
       </div>
     </form>
   </section>
+
+
+  <div class="search">
+    <div class="container">
+      <form class="search__form">
+
+        <label>
+          <input class="search__input" type="search">
+        </label>
+
+        <button class="search__button">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15.5 14H14.71L14.43 13.73C15.41 12.59 16 11.11 16 9.5C16 5.91 13.09 3 9.5 3C5.91 3 3 5.91 3 9.5C3 13.09 5.91 16 9.5 16C11.11 16 12.59 15.41 13.73 14.43L14 14.71V15.5L19 20.49L20.49 19L15.5 14ZM9.5 14C7.01 14 5 11.99 5 9.5C5 7.01 7.01 5 9.5 5C11.99 5 14 7.01 14 9.5C14 11.99 11.99 14 9.5 14Z" fill="currentColor"/>
+          </svg>
+        </button>
+      </form>
+    </div>
+  </div>
+
+
 </body>
 </html>
