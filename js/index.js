@@ -41,6 +41,12 @@ var __webpack_exports__ = {};
 !function() {
 "use strict";
 /* harmony import */ var navigo__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(123);
+function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it.return != null) it.return(); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 
 var library = document.querySelector('.library');
 
@@ -53,6 +59,10 @@ var backBtns = document.querySelectorAll('.header__btn_back');
 var btnSearch = document.querySelectorAll('.header__btn_search');
 var search = document.querySelector('.search');
 var btnAdd = document.querySelector('.header__btn-add');
+var fieldsBtnSort = document.querySelector('.fields__btn_sort');
+var fieldsListSort = document.querySelector('.fields__list_sort');
+var fieldsBtnFilter = document.querySelector('.fields__btn_filter');
+var fieldsListFilter = document.querySelector('.fields__list_filter');
 var router = new navigo__WEBPACK_IMPORTED_MODULE_0__('/', {
   hash: true
 });
@@ -63,35 +73,32 @@ var closeAllPage = function closeAllPage() {
   _book.classList.add('hidden');
 
   _add.classList.add('hidden');
-
-  search.classList.remove('search_active');
-  btnAdd.classList.remove('header__btn-hide');
 };
 
 router.on({
   '/': function _() {
     closeAllPage();
     library.classList.remove('hidden');
+    document.body.classList.remove('body_gradient');
   },
   'book': function book() {
     closeAllPage();
 
     _book.classList.remove('hidden');
+
+    document.body.classList.add('body_gradient');
   },
   'add': function add() {
     closeAllPage();
 
     _add.classList.remove('hidden');
+
+    document.body.classList.add('body_gradient');
   }
 }).resolve();
 addBtns.forEach(function (btn) {
   btn.addEventListener('click', function () {
     router.navigate('add');
-  });
-});
-backBtns.forEach(function (btn) {
-  btn.addEventListener('click', function () {
-    router.navigate('/');
   });
 });
 
@@ -109,10 +116,96 @@ btnSearch.forEach(function (btn) {
   btn.addEventListener('click', function (e) {
     search.classList.add('search_active');
     btnAdd.classList.add('header__btn-hide');
-    document.body.addEventListener('click', closeSearch);
+    document.body.addEventListener('click', closeSearch, true);
     library.addEventListener('click', closeSearch);
   });
 });
+
+var controlField = function controlField(btn, list, offList) {
+  btn.addEventListener('click', function () {
+    list.classList.toggle('fields__list_active');
+    offList.classList.remove('fields__list_active');
+  });
+  list.addEventListener('click', function () {
+    if (target.classList.contains('fields_button')) {
+      list.classList.remove('fields__list_active');
+    }
+  });
+};
+
+controlField(fieldsBtnSort, fieldsListSort, fieldsListFilter);
+controlField(fieldsBtnFilter, fieldsListFilter, fieldsListSort);
+
+var changeFieldset = function changeFieldset() {
+  var fieldsets = document.querySelectorAll('.add__fieldset');
+  var addBtn = document.querySelector('.add__btn');
+  var form = document.querySelector('.add__form');
+  var count = 0;
+  addBtn.addEventListener('click', function (_ref) {
+    var target = _ref.target;
+    var fieldset = fieldsets[count];
+    var valid = true;
+
+    var _iterator = _createForOfIteratorHelper(fieldset.elements),
+        _step;
+
+    try {
+      for (_iterator.s(); !(_step = _iterator.n()).done;) {
+        var elem = _step.value;
+
+        if (!elem.checkValidity()) {
+          elem.classList.add('no-valid');
+          valid = false;
+        } else {
+          elem.classList.remove('no-valid');
+        }
+      }
+    } catch (err) {
+      _iterator.e(err);
+    } finally {
+      _iterator.f();
+    }
+
+    if (valid) {
+      count += 1;
+
+      if (count === fieldsets.length - 1) {
+        addBtn.textContent = 'Добавить книгу';
+      }
+
+      if (count === fieldsets.length) {
+        var data = true;
+
+        if (data) {
+          form.reset();
+          router.navigate('/');
+          count = 0;
+          addBtn.textContent = 'Далее';
+        }
+      }
+
+      fieldset.classList.add('hidden');
+      fieldsets[count].classList.remove('hidden');
+    }
+  });
+  backBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var fieldset = fieldsets[count];
+
+      if (count >= 1) {
+        count -= 1;
+        fieldset.classList.add('hidden');
+        fieldsets[count].classList.remove('hidden');
+        addBtn.textContent = 'Далее';
+      } else {
+        router.navigate('/');
+        form.reset();
+      }
+    });
+  });
+};
+
+changeFieldset();
 }();
 /******/ })()
 ;

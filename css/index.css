@@ -542,6 +542,9 @@ html {
 
 body {
   min-height: 100vh;
+}
+
+.body {
   font-family: Montserrat, sans-serif;
   /* указать шрифт под проект*/
   font-size: 12px;
@@ -556,6 +559,10 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   line-height: 1.2;
+}
+
+.body_gradient {
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%), url("../img/fire.svg");
 }
 
 img {
@@ -622,6 +629,16 @@ iframe {
 
 section {
   padding-bottom: 80px;
+}
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.no-valid {
+  outline: 3px solid tomato;
 }
 
 .header {
@@ -963,6 +980,170 @@ section {
   height: 50px;
 }
 
+.add__form {
+  padding: 14px 0;
+}
+
+.add__fieldset {
+  margin: 0 auto;
+  max-width: 698px;
+}
+
+.add__title {
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 32px;
+  margin-bottom: 8px;
+}
+
+.add__subtitle {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 100%;
+  margin-bottom: 15px;
+  margin-top: 30px;
+}
+
+.add__step {
+  color: #EAEAEA;
+  font-size: 14px;
+  line-height: 100%;
+  margin-bottom: 30px;
+}
+
+.add__label {
+  display: block;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 100%;
+  padding-left: 8px;
+  margin-bottom: 7px;
+}
+
+.add__text {
+  background-color: #FFFFFF;
+  border: 1px solid #EAEAEA;
+  border-radius: 10px;
+  width: 100%;
+  height: 70px;
+  padding: 8px;
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
+.add__text_area {
+  min-height: 120px;
+  resize: none;
+  font-size: 14px;
+}
+
+.add__btn {
+  width: 320px;
+  height: 50px;
+  background: #F87C09;
+  color: #FFFFFF;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 100%;
+}
+
+.upload {
+  max-width: 222px;
+  margin: 0 auto 15px;
+}
+
+.upload__preview {
+  display: none;
+}
+
+.upload__file {
+  display: none;
+}
+
+.upload__label {
+  display: block;
+  width: 222px;
+  height: 290px;
+  background-image: url("../img/upload.jpg");
+  background-size: cover;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.status {
+  margin-bottom: 40px;
+}
+
+.status__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.status__radio {
+  position: absolute;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.status__label {
+  display: inline-block;
+  padding: 8px;
+  background: #FFFFFF;
+  color: #000000;
+  border-radius: 16px;
+  outline: 1px solid transparent;
+  transition: background-color 0.5s ease-in-out, outline-color 0.1s ease-in-out;
+}
+
+.status__label:hover {
+  background-color: #EAEAEA;
+}
+
+.status__radio:focus + .status__label {
+  outline-color: #6B6B6B;
+}
+
+.status__radio:active + .status__label {
+  outline-color: #F87C09;
+}
+
+.status__radio:checked + .status__label {
+  outline-color: #F87C09;
+  background-color: #F87C09;
+}
+
+.star__list {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+.star__icon {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/star-o.svg");
+  background-repeat: no-repeat;
+  background-size: 36px;
+  background-position: center;
+  cursor: pointer;
+}
+
+.star__radio {
+  position: absolute;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.star__icon:hover,
+.star__icon:hover ~ .star__icon,
+.star__radio:checked ~ .star__icon {
+  background-image: url("../img/star.svg");
+}
+
 .search {
   width: 320px;
   position: absolute;
@@ -1032,12 +1213,20 @@ section {
     content: none;
   }
 
-  .library__footer {
-    display: none;
-  }
-
   .book__wrapper {
     width: 300px;
+  }
+
+  .add__subtitle {
+    margin-top: 40px;
+  }
+
+  .add__label {
+    padding-left: 16px;
+  }
+
+  .add__text {
+    width: 698px;
   }
 
   .search_active {
@@ -1073,6 +1262,10 @@ section {
     display: none;
   }
 
+  .library__footer {
+    display: none;
+  }
+
   .fields__block {
     max-width: 142px;
   }
@@ -1103,14 +1296,19 @@ section {
     display: block;
   }
 
+  .add__subtitle {
+    margin-top: 20px;
+  }
+
   .search_active {
-    transform: translateY(80px);
+    transform: translateY(72px);
     transition: transform 0.3s ease-in-out;
     width: 580px;
     left: 48%;
   }
 
-  .footer {
+  .library__footer,
+  .book__footer {
     display: none;
   }
 }
@@ -1122,6 +1320,10 @@ section {
 
   .cart {
     max-width: 377px;
+  }
+
+  .add__subtitle {
+    margin-top: 40px;
   }
 }
 
@@ -1136,6 +1338,10 @@ section {
 
   .fields__list_filter {
     right: -8px;
+  }
+
+  .add__container {
+    padding: 0 12px;
   }
 }
 
