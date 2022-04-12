@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/index.min.css">
     <script src="js/index.min.js" defer></script>
 </head>
-<body>
+<body class="body">
   <section class="library">
     <header class="header library__header">
       <div class="container header__container">
@@ -268,16 +268,16 @@
           <p class="add__step">шаг 1/3</p>
 
           <label for="title" class="add__label">Название</label>
-          <input type="text" class="add__text" name="title" id="title">
+          <input type="text" class="add__text" name="title" id="title" required>
 
           <label for="author" class="add__label">Автор</label>
-          <input type="text" class="add__text" name="author" id="author">
+          <input type="text" class="add__text" name="author" id="author" required>
 
           <label for="description" class="add__label">Описание</label>
-          <textarea class="add__text add__text_area" name="description" id="description"></textarea>
+          <textarea class="add__text add__text_area" name="description" id="description" required></textarea>
         </fieldset>
 
-        <fieldset class="add__fieldset">
+        <fieldset class="add__fieldset hidden">
           <legend class="add__title">Обложка</legend>
 
           <p class="add__step">шаг 2/3</p>
@@ -293,17 +293,17 @@
           </div>
         </fieldset>
 
-        <fieldset class="add__fieldset">
+        <fieldset class="add__fieldset hidden">
           <legend class="add__title">Статус и оценка</legend>
 
           <p class="add__step">шаг 3/3</p>
 
           <fieldset class="status">
-            <legend>Выберите статус книги</legend>
+            <legend class="add__subtitle">Выберите статус книги</legend>
 
-            <ul class="status__list">
+            <ul class="status__list" required>
               <li class="status__item">
-                <input class="status__radio" type="radio" id="wish" name="label" value="wish">
+                <input class="status__radio" type="radio" id="wish" name="label" value="wish" required>
                 <label class="status__label" for="wish">хочу прочитать</label>
               </li>
               <li class="status__item">
@@ -315,17 +315,17 @@
                 <label class="status__label" for="read">читаю</label>
               </li>
               <li class="status__item">
-                <input class="status__radio" type="radio" id="not_finish" name="label" value="not_finishl">
+                <input class="status__radio" type="radio" id="not_finish" name="label" value="not_finish">
                 <label class="status__label" for="not_finish">не дочитал</label>
               </li>
             </ul>
           </fieldset>
 
           <fieldset class="star">
-            <legend>Поставьте оценку</legend>
+            <legend class="add__subtitle">Поставьте оценку</legend>
 
             <div class="star__list">
-              <input type="radio" class="star__radio" id="star-rating-5" name="rating" value="5">
+              <input type="radio" class="star__radio" id="star-rating-5" name="rating" value="5" required>
               <label for="star-rating-5" class="star__icon"></label>
 
               <input type="radio" class="star__radio" id="star-rating-4" name="rating" value="4">
@@ -351,7 +351,7 @@
     </form>
   </section>
 
-
+<div class="container_search">
   <div class="search">
     <div class="container">
       <form class="search__form">
@@ -368,6 +368,7 @@
       </form>
     </div>
   </div>
+</div>
 
 
 </body>

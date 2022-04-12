@@ -16,7 +16,9 @@
     padding: 20px;
     background-color: transparent;
   }
+}
 
+.library__footer, .book__footer {
   @include laptop {
     display: none;
   }

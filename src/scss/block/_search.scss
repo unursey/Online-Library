@@ -16,7 +16,7 @@
       width: 462px;
     }
     @include laptop {
-      transform: translateY($top * 5 + $height);
+      transform: translateY($top * 4 + $height);
       transition: transform 0.3s ease-in-out;
       width: 580px;
       left: 48%;
