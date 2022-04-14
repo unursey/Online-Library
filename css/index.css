@@ -1071,6 +1071,13 @@ fieldset {
   border-radius: 6px;
 }
 
+.upload__label_active {
+  background-image: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .status {
   margin-bottom: 40px;
 }
