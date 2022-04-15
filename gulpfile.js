@@ -224,3 +224,5 @@ export const base = gulp.parallel(html, scss, js, image, webp, avif, copy);
 export const build = gulp.series(clear, base);
 
 export default gulp.series(develop, base, server);
+
+
