@@ -1356,6 +1356,7 @@ var fieldsBtnFilter = document.querySelector('.fields__btn_filter');
 var fieldsListFilter = document.querySelector('.fields__list_filter');
 
 var init = function init() {
+  window.location.hash = '#/';
   initRouter();
   controlField(fieldsBtnSort, fieldsListSort, fieldsListFilter);
   controlField(fieldsBtnFilter, fieldsListFilter, fieldsListSort);
