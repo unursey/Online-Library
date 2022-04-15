@@ -1064,7 +1064,7 @@ var renderListBooks = /*#__PURE__*/function () {
 var bookContainer = document.querySelector('.book__container');
 var renderBook = /*#__PURE__*/function () {
   var _ref = _asyncToGenerator( /*#__PURE__*/regenerator.mark(function _callee(id) {
-    var _yield$Promise$all, _yield$Promise$all2, books, labels, r;
+    var _yield$Promise$all, _yield$Promise$all2, books, labels, divImage, divText;
 
     return regenerator.wrap(function _callee$(_context) {
       while (1) {
@@ -1079,29 +1079,16 @@ var renderBook = /*#__PURE__*/function () {
             books = _yield$Promise$all2[0];
             labels = _yield$Promise$all2[1];
             bookContainer.textContent = '';
-            r = window.location.href.split('id=')[1];
-            books.forEach(function (_ref2) {
-              var author = _ref2.author,
-                  description = _ref2.description,
-                  id = _ref2.id,
-                  image = _ref2.image,
-                  label = _ref2.label,
-                  rating = _ref2.rating,
-                  title = _ref2.title;
+            divImage = document.createElement('div');
+            divImage.classList.add('book__wrapper');
+            divImage.innerHTML = "\n    <img src='".concat(API_URI).concat(books.image, "' class=\"book__image\" alt=\"\u041E\u0431\u043B\u043E\u0436\u043A\u0430 \u043A\u043D\u0438\u0433\u0438 ").concat(books.title, "\">\n    <button class=\"book__label book__label_hidden\">").concat(labels[books.label], "</button>\n  ");
+            divText = document.createElement('div');
+            divText.classList.add('book__content');
+            divText.innerHTML = "\n    <h2 class=\"book__title\">".concat(books.title, "</h2>\n        <p class=\"book__author\">").concat(books.author, "</p>\n        <div class=\"book__rating\">").concat(getStars(books.rating).join(''), "</div>\n        <h3 class=\"book__subtitle\">\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435</h3>\n        <p class=\"book__description\">").concat(books.description, "</p>\n  ");
+            bookContainer.append(divImage);
+            bookContainer.append(divText);
 
-              if (id === r) {
-                var divImage = document.createElement('div');
-                divImage.classList.add('book__wrapper');
-                divImage.innerHTML = "\n    <img src='".concat(API_URI).concat(image, "' class=\"book__image\" alt=\"\u041E\u0431\u043B\u043E\u0436\u043A\u0430 \u043A\u043D\u0438\u0433\u0438 ").concat(title, "\">\n    <button class=\"book__label book__label_hidden\">").concat(labels[label], "</button>\n  ");
-                var divText = document.createElement('div');
-                divText.classList.add('book__content');
-                divText.innerHTML = "\n    <h2 class=\"book__title\">".concat(title, "</h2>\n        <p class=\"book__author\">").concat(author, "</p>\n        <div class=\"book__rating\">").concat(getStars(rating).join(''), "</div>\n        <h3 class=\"book__subtitle\">\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435</h3>\n        <p class=\"book__description\">").concat(description, "</p>\n  ");
-                bookContainer.append(divImage);
-                bookContainer.append(divText);
-              }
-            });
-
-          case 9:
+          case 15:
           case "end":
             return _context.stop();
         }
@@ -1356,7 +1343,6 @@ var fieldsBtnFilter = document.querySelector('.fields__btn_filter');
 var fieldsListFilter = document.querySelector('.fields__list_filter');
 
 var init = function init() {
-  window.location.hash = '#/';
   initRouter();
   controlField(fieldsBtnSort, fieldsListSort, fieldsListFilter);
   controlField(fieldsBtnFilter, fieldsListFilter, fieldsListSort);
