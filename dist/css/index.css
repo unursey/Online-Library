@@ -1308,7 +1308,7 @@ fieldset {
   }
 
   .search_active {
-    transform: translateY(72px);
+    transform: translateY(88px);
     transition: transform 0.3s ease-in-out;
     width: 580px;
     left: 48%;
