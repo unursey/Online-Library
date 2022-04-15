@@ -12,8 +12,6 @@ const fieldsListFilter = document.querySelector('.fields__list_filter');
 
 const init = () => {
 
-  window.location.hash = '#/';
-
   initRouter();
 
   controlField(fieldsBtnSort, fieldsListSort, fieldsListFilter);
