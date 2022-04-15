@@ -1309,6 +1309,7 @@ var changeFieldset = function changeFieldset() {
         addBtn.textContent = 'Далее';
       } else {
         router.navigate('/');
+        document.querySelector('.book__container').textContent = '';
         changeFieldset_form.reset();
         clearPreview();
         return;
