@@ -1002,11 +1002,11 @@ var getStars = function getStars(rating) {
 
   for (var i = 0; i < 5; i++) {
     if (i === 0) {
-      stars.push("<img class=\"cart__rating-star\" src=\"Online-Library/img/star.svg\" alt=\"\u0420\u0435\u0439\u0442\u0438\u043D\u0433 ".concat(rating, " \u0438\u0437 5\">"));
+      stars.push("<img class=\"cart__rating-star\" src=\"img/star.svg\" alt=\"\u0420\u0435\u0439\u0442\u0438\u043D\u0433 ".concat(rating, " \u0438\u0437 5\">"));
     } else if (i < rating) {
-      stars.push("<img class=\"cart__rating-star\" src=\"Online-Library/img/star.svg\" alt=\"\">");
+      stars.push("<img class=\"cart__rating-star\" src=\"img/star.svg\" alt=\"\">");
     } else {
-      stars.push("<img class=\"cart__rating-star\" src=\"Online-Library/img/star-o.svg\" alt=\"\">");
+      stars.push("<img class=\"cart__rating-star\" src=\"img/star-o.svg\" alt=\"\">");
     }
   }
 
@@ -1039,7 +1039,7 @@ var renderListBooks = /*#__PURE__*/function () {
                   title = _ref2.title;
               var item = document.createElement('li');
               item.classList.add('library__item');
-              item.innerHTML = "\n    <a href=\"Online-Library/#/book?id=".concat(id, "\">\n            <article class=\"cart\">\n              <div class=\"cart__wrapper\">\n                <img src=\"").concat(API_URI).concat(image, "\" alt=\"\u041E\u0431\u043B\u043E\u0436\u043A\u0430 \u043A\u043D\u0438\u0433\u0438 ").concat(title, "\" class=\"cart__image\">\n\n                <p class=\"cart__label\">").concat(labels[label], "</p>\n              </div>\n\n              <div class=\"cart__content\">\n                <h3 class=\"cart__title\">").concat(title, "</h3>\n\n                <p class=\"cart__author\">").concat(author, "</p>\n\n                <p class=\"cart__description\">\n                  ").concat(description.substring(0, 80), "...\n                </p>\n\n                <div class=\"cart__rating\">\n                    ").concat(getStars(rating).join(''), "\n                </div>\n              </div>\n            </article>\n          </a>\n        ");
+              item.innerHTML = "\n    <a href=\"/#/book?id=".concat(id, "\">\n            <article class=\"cart\">\n              <div class=\"cart__wrapper\">\n                <img src=\"").concat(API_URI).concat(image, "\" alt=\"\u041E\u0431\u043B\u043E\u0436\u043A\u0430 \u043A\u043D\u0438\u0433\u0438 ").concat(title, "\" class=\"cart__image\">\n\n                <p class=\"cart__label\">").concat(labels[label], "</p>\n              </div>\n\n              <div class=\"cart__content\">\n                <h3 class=\"cart__title\">").concat(title, "</h3>\n\n                <p class=\"cart__author\">").concat(author, "</p>\n\n                <p class=\"cart__description\">\n                  ").concat(description.substring(0, 80), "...\n                </p>\n\n                <div class=\"cart__rating\">\n                    ").concat(getStars(rating).join(''), "\n                </div>\n              </div>\n            </article>\n          </a>\n        ");
               libraryList.append(item);
             });
 
