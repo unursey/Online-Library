@@ -58,6 +58,7 @@ const changeFieldset = () => {
         addBtn.textContent = 'Далее';
       } else {
         router.navigate('/');
+        document.querySelector('.book__container').textContent = '';
         form.reset();
         clearPreview();
         return;
