@@ -25,7 +25,7 @@ export const renderListBooks = async () => {
     const item = document.createElement('li');
     item.classList.add('library__item');
     item.innerHTML = `
-    <a href="/Online-Library/#/book?id=${id}">
+    <a href="/Online-Library/book?id=${id}">
             <article class="cart">
               <div class="cart__wrapper">
                 <img src="${API_URI}${image}" alt="Обложка книги ${title}" class="cart__image">
