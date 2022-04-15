@@ -2,7 +2,7 @@
 export const API_URI = 'https://pure-fortress-06561.herokuapp.com/';
 
 export const getBooks = async (id) => {
-  const response = await fetch(`${API_URI}api/books/`);
+  const response = await fetch(`${API_URI}api/books/${id ? id: ''}`);
 
   if (response.ok) {
     return response.json();

@@ -6,11 +6,11 @@ export const getStars = (rating) => {
   const stars = [];
   for (let i = 0; i < 5; i++) {
     if (i === 0) {
-      stars.push(`<img class="cart__rating-star" src="img/star.svg" alt="Рейтинг ${rating} из 5">`);
+      stars.push(`<img class="cart__rating-star" src="Online-Library/img/star.svg" alt="Рейтинг ${rating} из 5">`);
     } else if (i < rating) {
-      stars.push(`<img class="cart__rating-star" src="img/star.svg" alt="">`);
+      stars.push(`<img class="cart__rating-star" src="Online-Library/img/star.svg" alt="">`);
     } else {
-      stars.push(`<img class="cart__rating-star" src="img/star-o.svg" alt="">`);
+      stars.push(`<img class="cart__rating-star" src="Online-Library/img/star-o.svg" alt="">`);
     }
   }
   return stars;
@@ -25,7 +25,7 @@ export const renderListBooks = async () => {
     const item = document.createElement('li');
     item.classList.add('library__item');
     item.innerHTML = `
-    <a href="/#/book?id=${id}">
+    <a href="Online-Library/#/book?id=${id}">
             <article class="cart">
               <div class="cart__wrapper">
                 <img src="${API_URI}${image}" alt="Обложка книги ${title}" class="cart__image">
