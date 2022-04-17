@@ -1038,14 +1038,24 @@ fieldset {
 }
 
 .add__btn {
-  width: 320px;
-  height: 50px;
+  width: 100%;
+  max-width: 320px;
   background: #F87C09;
   color: #FFFFFF;
+  border: 1px solid transparent;
   border-radius: 8px;
   font-weight: 500;
   font-size: 14px;
   line-height: 100%;
+  padding: 18px 36px;
+}
+
+.add__btn:focus {
+  border-color: #FFFFFF;
+}
+
+.add__btn:hover {
+  background-color: #FF922E;
 }
 
 .upload {
