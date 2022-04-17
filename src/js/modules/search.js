@@ -1,12 +1,14 @@
+import {renderList} from "./renderListBooks.js";
+import {searchBooks} from './serviceBook.js';
+
 const library = document.querySelector('.library');
-const backBtns = document.querySelectorAll('.header__btn_back');
 const btnSearch = document.querySelectorAll('.header__btn_search');
 const search = document.querySelector('.search');
 const btnAdd = document.querySelector('.header__btn-add');
+const searchForm = document.querySelector('.search__form');
 
-const closeSearch = (e) => {
-
-  if (e.target.closest('.search, .header__btn_search')) {
+const closeSearch = ({target}, flag) => {
+  if (target.closest('.search, .header__btn_search') && !flag) {
     return;
   }
   search.classList.remove('search_active');
@@ -24,3 +26,10 @@ btnSearch.forEach(btn => {
   });
 });
 
+searchForm.addEventListener('submit', async e => {
+  e.preventDefault();
+  const books = await searchBooks(searchForm.input.value);
+  renderList(books);
+  e.target.reset();
+ closeSearch(e, true);
+})

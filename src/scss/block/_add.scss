@@ -80,13 +80,21 @@
   }
 
   &__btn {
-    width: 320px;
-    height: 50px;
+    width: 100%;
+    max-width: 320px;
     background: $primary;
     color: $light;
+    border: 1px solid transparent;
     border-radius: 8px;
     font-weight: 500;
     font-size: 14px;
     line-height: 100%;
+    padding: 18px 18*2px;
+    &:focus {
+      border-color: $light;
+    }
+    &:hover {
+      background-color: $primaryLight;
+    }
   }
 }

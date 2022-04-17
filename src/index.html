@@ -37,10 +37,10 @@
 
           <ul class="fields__list fields__list_sort">
             <li class="fields__item">
-              <button class="fields__button">от большего</button>
+              <button class="fields__button" data-sort="down">от большего</button>
             </li>
             <li class="fields__item">
-              <button class="fields__button">от меньшего</button>
+              <button class="fields__button" data-sort="up">от меньшего</button>
             </li>
           </ul>
         </div>
@@ -55,18 +55,7 @@
           </button>
 
           <ul class="fields__list fields__list_filter">
-            <li class="fields__item">
-              <button class="fields__button">хочу прочитать</button>
-            </li>
-            <li class="fields__item">
-              <button class="fields__button">прочитал</button>
-             </li>
-            <li class="fields__item">
-              <button class="fields__button">читаю</button>
-            </li>
-            <li class="fields__item">
-              <button class="fields__button">не дочитал</button>
-            </li>
+
           </ul>
         </div>
       </div>
@@ -75,124 +64,6 @@
     <div class="container library__list-container">
       <h2 class="visually-hidden">Список книг</h2>
       <ul class="library__list">
-        <li class="library__item">
-          <a href="/book" data-navigo>
-            <article class="cart">
-              <div class="cart__wrapper">
-                <img src="img/1984.jpg" alt="Обложка 1984" class="cart__image">
-
-                <p class="cart__label">хочу прочитать</p>
-              </div>
-
-              <div class="cart__content">
-                <h3 class="cart__title">1984</h3>
-
-                <p class="cart__author">Джордж Оруэлл</p>
-
-                <p class="cart__description">
-                  Главный герой — Уинстон Смит — живёт в Лондоне, работает в Министерстве правды и является...
-                </p>
-
-                <div class="cart__rating">
-                  <img class="cart__rating-star" src="img/star.svg" alt="Рейтинг 4 из 5">
-                  <img class="cart__rating-star" src="img/star.svg" alt="">
-                  <img class="cart__rating-star" src="img/star.svg" alt="">
-                  <img class="cart__rating-star" src="img/star.svg" alt="">
-                  <img class="cart__rating-star" src="img/star-o.svg" alt="">
-                </div>
-              </div>
-            </article>
-          </a>
-        </li>
-
-        <li class="library__item">
-          <a href="/book" data-navigo>
-            <article class="cart">
-              <div class="cart__wrapper">
-                <img src="img/garry.png" alt="Обложка 1984" class="cart__image">
-
-                <p class="cart__label">хочу прочитать</p>
-              </div>
-
-              <div class="cart__content">
-                <h3 class="cart__title">Гарри Поттер и Философский камень</h3>
-
-                <p class="cart__author">Джоан Роулинг</p>
-
-                <p class="cart__description">
-                  Первый роман в серии книг про юного волшебника Гарри Поттера, написанный Дж. К. Роулинг. В нём...
-                </p>
-
-                <div class="cart__rating">
-                  <img class="cart__rating-star" src="img/star.svg" alt="Рейтинг 5 из 5">
-                  <img class="cart__rating-star" src="img/star.svg" alt="">
-                  <img class="cart__rating-star" src="img/star.svg" alt="">
-                  <img class="cart__rating-star" src="img/star.svg" alt="">
-                </div>
-              </div>
-            </article>
-          </a>
-        </li>
-
-        <li class="library__item">
-          <a href="/book" data-navigo>
-            <article class="cart">
-              <div class="cart__wrapper">
-                <img src="img/fil.png" alt="Обложка Как разговаривать с кем угодно" class="cart__image">
-
-                <p class="cart__label">хочу прочитать</p>
-              </div>
-
-              <div class="cart__content">
-                <h3 class="cart__title">Как разговаривать с кем угодно</h3>
-
-                <p class="cart__author">Марк Роудз</p>
-
-                <p class="cart__description">
-                  Вы раскрываетесь в обществе других людей и заводите разговор или же замыкаетесь...
-                </p>
-
-                <div class="cart__rating">
-                  <img class="cart__rating-star" src="img/star.svg" alt="Рейтинг 4 из 5">
-                  <img class="cart__rating-star" src="img/star.svg" alt="">
-                  <img class="cart__rating-star" src="img/star.svg" alt="">
-                  <img class="cart__rating-star" src="img/star.svg" alt="">
-                  <img class="cart__rating-star" src="img/star-o.svg" alt="">
-                </div>
-              </div>
-            </article>
-          </a>
-        </li>
-
-        <li class="library__item">
-          <a href="/book" data-navigo>
-            <article class="cart">
-              <div class="cart__wrapper">
-                <img src="img/lourens.png" alt="Обложка Книга Ленивого Гуру" class="cart__image">
-
-                <p class="cart__label">хочу прочитать</p>
-              </div>
-
-              <div class="cart__content">
-                <h3 class="cart__title">Книга Ленивого Гуру</h3>
-
-                <p class="cart__author">Лоуренс Шортер</p>
-
-                <p class="cart__description">
-                  Свежее и вдохновляющее иллюстрированное руководство для осознанного саморазвития без суеты и стресса...
-                </p>
-
-                <div class="cart__rating">
-                  <img class="cart__rating-star" src="img/star.svg" alt="Рейтинг 4 из 5">
-                  <img class="cart__rating-star" src="img/star.svg" alt="">
-                  <img class="cart__rating-star" src="img/star.svg" alt="">
-                  <img class="cart__rating-star" src="img/star.svg" alt="">
-                  <img class="cart__rating-star" src="img/star-o.svg" alt="">
-                </div>
-              </div>
-            </article>
-          </a>
-        </li>
 
       </ul>
     </div>
@@ -219,11 +90,6 @@
     </header>
 
     <div class="container book__container">
-      <div class="book__wrapper">
-        <img class="book__image" src="img/1984.jpg" alt="Обложка 1984">
-
-      <button class="book__label book__label_hidden">хочу прочитать</button>
-      </div>
 
       <div class="book__content">
         <h2 class="book__title">1984</h2>
@@ -288,7 +154,7 @@
             <label class="upload__label">
               <img src="about:blank" class="upload__preview" alt="Превью изображения">
 
-              <input type="file" name='file' class="upload__file" accept="image/*">
+              <input type="file" name='image' class="upload__file" accept="image/*">
             </label>
           </div>
         </fieldset>
@@ -357,7 +223,7 @@
       <form class="search__form">
 
         <label>
-          <input class="search__input" type="search">
+          <input class="search__input" type="search" name="input">
         </label>
 
         <button class="search__button">
