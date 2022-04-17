@@ -810,6 +810,21 @@ var __webpack_exports__ = {};
 !function() {
 "use strict";
 
+;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/defineProperty.js
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
 // EXTERNAL MODULE: ./node_modules/navigo/lib/navigo.min.js
 var navigo_min = __webpack_require__(123);
 ;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/arrayWithHoles.js
@@ -1370,51 +1385,41 @@ bookContainer.append(divText);
 
 
 
+
 var library = document.querySelector('.library');
-
-var _book = document.querySelector('.book');
-
-var _add = document.querySelector('.add');
-
+var book = document.querySelector('.book');
+var add = document.querySelector('.add');
 var addBtns = document.querySelectorAll('.header__btn-add, .library__add-btn');
 var backBtn = document.querySelector('.book__btn_back');
-var router = new navigo_min('/', {
+var router = new navigo_min(location.pathname, {
   hash: true
 });
 
 var closeAllPage = function closeAllPage() {
   library.classList.add('hidden');
-
-  _book.classList.add('hidden');
-
-  _add.classList.add('hidden');
+  book.classList.add('hidden');
+  add.classList.add('hidden');
 };
 
 var initRouter = function initRouter() {
-  router.on({
-    '/': function _() {
-      closeAllPage();
-      library.classList.remove('hidden');
-      document.body.classList.remove('body_gradient');
-      renderListBooks();
-    },
-    'book': function book(_ref) {
-      var id = _ref.params.id;
-      closeAllPage();
+  var _router$on;
 
-      _book.classList.remove('hidden');
-
-      document.body.classList.add('body_gradient');
-      renderBook(id);
-    },
-    'add': function add() {
-      closeAllPage();
-
-      _add.classList.remove('hidden');
-
-      document.body.classList.add('body_gradient');
-    }
-  }).resolve();
+  router.on((_router$on = {}, _defineProperty(_router$on, location.pathname, function () {
+    closeAllPage();
+    library.classList.remove('hidden');
+    document.body.classList.remove('body_gradient');
+    renderListBooks();
+  }), _defineProperty(_router$on, location.pathname + 'book', function (_ref) {
+    var id = _ref.params.id;
+    closeAllPage();
+    book.classList.remove('hidden');
+    document.body.classList.add('body_gradient');
+    renderBook(id);
+  }), _defineProperty(_router$on, location.pathname + 'add', function () {
+    closeAllPage();
+    add.classList.remove('hidden');
+    document.body.classList.add('body_gradient');
+  }), _router$on)).resolve();
   addBtns.forEach(function (btn) {
     btn.addEventListener('click', function () {
       router.navigate('add');
