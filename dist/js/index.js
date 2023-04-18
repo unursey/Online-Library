@@ -941,7 +941,7 @@ var regenerator = __webpack_require__(757);
 
 
 //export const API_URI = 'http://localhost:3024/';
-var API_URI = 'https://pure-fortress-06561.herokuapp.com/';
+var API_URI = 'https://swanky-hyper-riddle.glitch.me/';
 var getBooks = /*#__PURE__*/function () {
   var _ref = asyncToGenerator_asyncToGenerator( /*#__PURE__*/regenerator.mark(function _callee(id) {
     var response;
