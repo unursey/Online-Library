@@ -1,5 +1,5 @@
 //export const API_URI = 'http://localhost:3024/';
-export const API_URI = 'https://pure-fortress-06561.herokuapp.com/';
+export const API_URI = 'https://swanky-hyper-riddle.glitch.me/';
 
 export const getBooks = async (id) => {
   const response = await fetch(`${API_URI}api/books/${id || ''}`);
